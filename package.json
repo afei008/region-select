@@ -1,0 +1,49 @@
+{
+    "name": "region-select",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "files": [
+        "lib"
+    ],
+    "main": "./lib/region-select.umd.js",
+    "module": "./lib/region-select.es.js",
+    "types": "./lib/region-select.d.ts",
+    "exports": {
+        ".": {
+            "import": "./lib/region-select.es.js",
+            "require": "./lib/region-select.umd.js"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && tsc -p tsconfig.build.json",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.195",
+        "@types/node": "^18.11.10",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint": "^8.29.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-html": "^7.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "postcss": "^8.4.19",
+        "postcss-html": "^1.5.0",
+        "postcss-scss": "^4.0.6",
+        "prettier": "^2.8.0",
+        "sass": "^1.56.1",
+        "stylelint": "^14.16.0",
+        "stylelint-config-recess-order": "^3.0.0",
+        "stylelint-config-recommended-scss": "^8.0.0",
+        "stylelint-config-standard": "^29.0.0",
+        "stylelint-config-standard-scss": "^6.1.0",
+        "stylelint-scss": "^4.3.0",
+        "typescript": "^4.6.4",
+        "vite": "^3.2.3"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
+}

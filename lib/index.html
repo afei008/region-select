@@ -1,0 +1,37 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="region-select">选择城市</div>
+        <script src="./region-select.umd.cjs"></script>
+        <script src="./city.js"></script>
+        <script>
+            const regionSelect = new RegionSelect({
+                trigger: '#region-select',
+                data: addr,
+                keyMap: {
+                    id: 'code',
+                    value: 'name',
+                    children: 'areaList',
+                }, // 传入的数据中键的名称，默认为 id、value、children
+                init: [], // 需按省市区输入，暂不支持仅输入市或者区，如 ['广东省', '惠州市', '惠东县']、['广东省', '惠州市']
+                exclude: [], // 排除的数据，注意不要与 init 数据冲突，可输入省市区任意名称，如数据中名称有重复的则会一并过滤掉，如 ['广东省', '北京市']
+                include: [], // 仅显示的数据，权限比 exclude 高，格式同 exclude
+                onCancel: () => {
+                    console.log('click cancel');
+                },
+                onConfirm: () => {
+                    console.log(regionSelect.select);
+                },
+            });
+        </script>
+    </body>
+</html>
